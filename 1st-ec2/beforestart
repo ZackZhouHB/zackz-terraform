@@ -1,0 +1,21 @@
+- we need:
+aws account with IAM user with access keys
+Terraform binary download and installation
+write .tf to launch instance
+terraform init/validate/fmt/plan/apply
+
+- install terraform on local windows by 
+open powershell
+choco list --localonly
+choco install terraform
+choco install awscli
+
+go git bash validate version
+$ terraform -version
+Terraform v1.5.1
+
+$ aws configure
+input key and secret
+
+git filter-branch -f --index-filter 'git rm --cached -r --ignore-unmatch .terraform/'
+https://github.com/hashicorp/terraform-guides/issues/92

@@ -1,0 +1,4 @@
+# in this 7, I will add 2 html web zip files
+# use "file" provisioner to copy from local to ec2 web1 and web2 appications via ssh key created 
+# modify web.sh web2.sh to unzip and move file to /var/www/html
+# be able to spin up 2 web apps from terraform tf 
