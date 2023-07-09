@@ -1,0 +1,23 @@
+# Terraform-exercises
+
+README.md
+
+This is a self-learning project named zack-iaac-terraform
+The object is to practise infrastructure as a code by deploying a JAVA stack to AWS by using Terraform
+
+The project will follow bellow stages :
+
+Stage1 :
+- Setup Terraform local IDE, setup providers as AWS
+- Exercise to create environment vars
+- Modules, Provisioners and output
+- multi-resource exercise for key pairs, VPC, SG, subnets, EC2
+Stage2:
+- create S3 for state
+- create backend resources
+- RDS, ElasticCache $ Amazon MQ
+- Beanstalk ENV
+- Bastion host and DB initialization
+- Deploy artifact
+
+
