@@ -1,9 +1,0 @@
-# backend:
-# terraform state is local
-# if in a team, diff people make change will have diff state of infrastructure
-# Terraform state should be in sync, then Terraform state file should be same across all execution
-# best to put Terraform state file in a remote location (AWS S3)
-
-# with backend state in S3, other change by diff people will be updated to backend state
-# to achive the state concept of marntaining infrastructure in same level in /
-# a centralized location that can support mutiple changes applied. 

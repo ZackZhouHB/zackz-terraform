@@ -1,0 +1,21 @@
+---
+- name: Wait for backend server to be ready
+  hosts: tag_Name_e3_easy_bastion_host
+  gather_facts: false
+  tasks:
+    - name: Check if backend server is ready
+      wait_for:
+        host: tag_Name_e3_redis
+        port: 22
+        timeout: 300  # Adjust the timeout as needed
+      delegate_to: localhost
+      register: ec2_ready
+      until: ec2_ready.elapsed < 300
+      retries: 5
+
+- hosts: tag_Name_e3_redis
+  tasks:
+    - name: Echo "hello"
+      ansible.builtin.debug:
+        msg: "hello"
+

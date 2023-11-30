@@ -1,0 +1,25 @@
+# create a zip of your deployment with terraform
+data "archive_file" "api_dist_zip" {
+  type        = "zip"
+  source_file = "${path.root}/${var.api_dist}"
+  output_path = "${path.root}/${var.api_dist}.zip"
+}
+
+resource "aws_s3_bucket" "dist_bucket" {
+  bucket = "${var.namespace}-elb-dist"
+  acl    = "private"
+}
+resource "aws_s3_bucket_object" "dist_item" {
+  key    = "${var.environment}/dist-${uuid()}"
+  bucket = "${aws_s3_bucket.dist_bucket.id}"
+  source = "${var.dist_zip}"
+}
+
+
+resource "aws_elastic_beanstalk_application_version" "v12" {
+  application = aws_elastic_beanstalk_application.e9_ba_1.name
+  name = 
+  description = "Blue environment deployment"
+  bucket      = "your-s3-bucket"  # Specify your S3 bucket for artifact storage
+  key         = "path/to/your/v1.zip"  # Specify the path to your local artifact (ZIP file)
+}

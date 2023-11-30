@@ -1,8 +1,0 @@
-# registry.terraform.io
-# choose cloud provider 
-# choose AWS then go documentation for mudules resources and examples (aws_vpc, aws_subnet)
-# (aws_network_interface, then aws_instance)
-
-# exercise 6 will :
-# create vpc and SG, then ec2 within the vpc and SG
-# distirbute into diff .tf files

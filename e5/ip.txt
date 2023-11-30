@@ -1,0 +1,3 @@
+aws_instance.e3_backend_server_1.private_ip 
+aws_instance.e3_bastion_host.public_ip 
+aws_instance.e3_bastion_host.private_ip 

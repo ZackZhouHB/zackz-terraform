@@ -1,0 +1,21 @@
+---
+- hosts: tag_Project_e3
+  become: true
+  tasks:
+    - name: Update system packages
+      package:
+        name: '*'
+        state: latest
+      become: yes
+    - name: Install redis
+      package:
+        name: redis
+        state: present
+      become: yes
+
+    - name: Start and enable redis
+      service:
+        name: redis
+        state: started
+        enabled: yes
+      become: yes

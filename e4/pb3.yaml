@@ -1,0 +1,7 @@
+---
+- hosts: aws_region_ap_southeast_2
+  tasks:
+    - name: Echo "hello"
+      ansible.builtin.debug:
+        msg: "hello"
+

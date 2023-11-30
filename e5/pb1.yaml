@@ -1,0 +1,16 @@
+---
+- hosts: tag_Project_e3
+  become: true
+
+  tasks:
+    - name: Update system packages
+      package:
+        name: '*'
+        state: latest
+      become: yes
+
+    - name: install wget
+      package:
+        name: wget
+        state: present
+      become: yes
